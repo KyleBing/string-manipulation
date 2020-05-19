@@ -1,0 +1,87 @@
+{
+	"name": "文字操作",
+	"description": "文字对齐工具",
+	"version": "1.0",
+	"publisher": "KyleBing",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Utility"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:extension.trimEmptyLines",
+		"onCommand:extension.alignColon",
+		"onCommand:extension.alignEqual",
+		"onCommand:extension.alignComma",
+		"onCommand:extension.alignSharp"
+	],
+	"contributes": {
+		"commands": [{
+				"command": "extension.trimEmptyLines",
+				"title": "清除空行"
+			},
+			{
+				"command": "extension.alignColon",
+				"title": "对齐冒号"
+			},
+			{
+				"command": "extension.alignEqual",
+				"title": "对齐等号"
+			},
+			{
+				"command": "extension.alignComma",
+				"title": "对齐逗号"
+			},
+			{
+				"command": "extension.alignSharp",
+				"title": "对齐井号"
+			}
+
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"id": "words",
+					"title": "文字操作",
+					"group": "z_commands"
+				},
+				{
+					"title": "清除空行",
+					"command": "extension.trimEmptyLines",
+					"group": "words@1",
+					"when": "editorTextFocus"
+				},
+				{
+					"title": "对齐 （ : ）",
+					"command": "extension.alignColon",
+					"group": "words@2",
+					"when": "editorTextFocus"
+				},
+				{
+					"title": "对齐 （ = ）",
+					"command": "extension.alignEqual",
+					"group": "words@3",
+					"when": "editorTextFocus"
+				},
+				{
+					"title": "对齐 （ , ）",
+					"command": "extension.alignComma",
+					"group": "words@4",
+					"when": "editorTextFocus"
+				},
+				{
+					"title": "对齐 （ # ）",
+					"command": "extension.alignSharp",
+					"group": "words@5",
+					"when": "editorTextFocus"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {}
+}
